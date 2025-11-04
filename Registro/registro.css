@@ -1,5 +1,34 @@
+:root{
+    --cor-primaria: #4B0082;
+    --cor-secundaria: #1A1A1A;
+    --cor-acento: #DAA520;
+    --fundo: #2C2C2C;
+    --texto: #F5F5F5;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--texto);
+}
+
+body{
+    background-color: var(--fundo);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    background-color: #1A1A1A;
 }
