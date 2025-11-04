@@ -1,34 +1,108 @@
-:root{
-    --cor-primaria: #4B0082;
-    --cor-secundaria: #1A1A1A;
-    --cor-acento: #DAA520;
-    --fundo: #2C2C2C;
-    --texto: #F5F5F5;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+
+:root {
+  --cor-primaria: #4b0082;
+  --cor-secundaria: #1a1a1a;
+  --cor-acento: #daa520;
+  --fundo: #2c2c2c;
+  --texto: #f5f5f5;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: var(--texto);
+* {
+  font-family: Merriweather;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--texto);
 }
 
-body{
-    background-color: var(--fundo);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body {
+  background-color: var(--fundo);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-header{
-    position: fixed;
-    top: 0px;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1em;
-    background-color: #1A1A1A;
+header {
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #1a1a1a;
+  align-items: center;
+}
+
+header .logo {
+  width: 70px;
+  align-items: center;
+}
+
+header h1 {
+  color: var(--cor-acento);
+}
+
+main {
+  margin-top: 10vh;
+  display: flex;
+}
+
+.content {
+  width: 50vw;
+  font-size: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content img {
+  width: 600px;
+  display: flex;
+  
+}
+
+.formulario {
+  width: 50vw;
+  background-color: var(--cor-secundaria);
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5em;
+}
+
+.formulario #cpf,
+#numero,
+#nome,
+#email,
+#senha {
+  width: 80%;
+  height: 4vh;
+  border-radius: 10px;
+}
+
+.condERedirecionamento a {
+    transition: 0.3s ease;
+}
+
+.condERedirecionamento a:hover {
+    color: var(--cor-acento);
+}
+
+#enviar {
+  width: 90%;
+  height: 4vh;
+  border-radius: 10px;
+  background-color: var(--cor-primaria);
+  margin-top: 2em;
+  transition: 0.3s ease;
+  border: 0px;
+}
+
+#enviar:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: #3a0263;
 }
