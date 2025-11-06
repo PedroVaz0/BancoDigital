@@ -50,53 +50,26 @@ header h1 {
 
 main {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  width: 90%;
-  max-width: 1200px;
-  margin-top: 15vh;
+  max-width: 600px;
+  margin-top: 25vh;
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-
-.content {
-  width: 50%;
-  background-color: var(--cinza);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.content h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
-
-.content img {
-  width: 90%;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.formulario {
   width: 50%;
   background-color: var(--cor-secundaria);
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 5em 2em;
 }
 
-.formulario input[type="text"],
-.formulario input[type="tel"],
-.formulario input[type="email"],
-.formulario input[type="password"] {
+h2{
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+
+main input[type="email"],
+main input[type="password"] {
   width: 100%;
   height: 45px;
   border-radius: 8px;
@@ -105,36 +78,37 @@ main {
   color: var(--texto);
   padding: 0 15px;
   font-size: 1rem;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   transition: all 0.2s ease;
 }
 
-.condERedirecionamento {
+
+
+.Redirecionamento {
   font-size: 0.85em;
   margin-top: 1em;
   color: #ccc;
-  display: flex;
-  flex-direction: column;
 }
 
 
-.condERedirecionamento a {
+.Redirecionamento a {
+  margin-top: 2em;
   color: #aaa;
   text-decoration: none;
   transition: 0.3s ease;
 }
 
-.condERedirecionamento a:hover {
+.Redirecionamento a:hover {
   color: var(--cor-acento);
 }
 
 #enviar {
-  margin-top: 2em;
   width: 100%;
   height: 45px;
   border-radius: 10px;
   background-color: var(--cor-primaria);
   border: none;
+  margin-top: 2rem;
   color: #fff;
   font-weight: 600;
   transition: all 0.3s ease;
