@@ -1,15 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
 
 :root {
-  --cor-primaria: #4b0082;
-  --cor-secundaria: #1a1a1a;
-  --cor-acento: #daa520;
-  --fundo: #2c2c2c;
-  --texto: #f5f5f5;
+  --cor-primaria: #5b2cbf;
+  --cor-secundaria: #1e1e1e;
+  --cor-acento: #f1c232;
+  --fundo: #2b2b2b;
+  --texto: #f9f9f9;
+  --cinza: #3a3a3a;
 }
 
 * {
-  font-family: Merriweather;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,113 +19,160 @@
 
 body {
   background-color: var(--fundo);
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
 }
 
 header {
   position: fixed;
-  top: 0px;
-  width: 100vw;
+  top: 0;
+  width: 100%;
+  background-color: var(--cor-secundaria);
   display: flex;
-  justify-content: center;
-  background-color: #1a1a1a;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 header .logo {
-  width: 70px;
-  align-items: center;
+  width: 60px;
 }
 
 header h1 {
   color: var(--cor-acento);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
 }
 
 main {
-  margin-top: 10vh;
   display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 10vh;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .content {
-  width: 50vw;
-  font-size: 1.5rem;
+  width: 50%;
+  background-color: var(--cinza);
+  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 .content img {
-  width: 800px;
-  display: flex;
-  
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .formulario {
-  width: 50vw;
+  width: 50%;
   background-color: var(--cor-secundaria);
-  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 5em;
+  justify-content: center;
+  padding: 3rem 2rem;
 }
 
-.formulario #cpf,
-#numero,
-#nome,
-#email,
-#senha {
-  width: 80%;
-  height: 6vh;
-  border-radius: 10px;
-  border-radius: 25px;
-  color: var(--cor-secundaria);
-  transition: 0.1s;
-}
-
-.formulario #cpf:hover,
-#numero:hover,
-#nome:hover,
-#email:hover,
-#senha:hover {
-  border: 3px solid;
-  border-color: #4c0082cb;
-}
-
-.formulario input {
-  font-size: 1.2em;
-  padding-left: 15px;
-  font-weight: 600;
+.formulario input[type="text"],
+.formulario input[type="tel"],
+.formulario input[type="email"],
+.formulario input[type="password"] {
+  width: 100%;
+  height: 45px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--cinza);
+  color: var(--texto);
+  padding: 0 15px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
 }
 
 .formulario input:focus {
   outline: none;
+  border: 2px solid var(--cor-primaria);
+  background-color: #444;
+}
+
+.condERedirecionamento {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: #ccc;
+}
+
+.condERedirecionamento label {
+  line-height: 1.4;
 }
 
 .condERedirecionamento a {
-    transition: 0.3s ease;
+  display: block;
+  margin-top: 1rem;
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .condERedirecionamento a:hover {
-    color: var(--cor-acento);
+  color: var(--cor-acento);
 }
 
 #enviar {
-  width: 90%;
-  height: 4vh;
+  width: 100%;
+  height: 45px;
   border-radius: 10px;
   background-color: var(--cor-primaria);
-  margin-top: 2em;
-  transition: 0.3s ease;
-  border: 0px;
+  border: none;
+  margin-top: 2rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 #enviar:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    background-color: #3a0263;
+  cursor: pointer;
+  transform: scale(1.03);
+  background-color: #4a1fa3;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+
+  .content, .formulario {
+    width: 100%;
+  }
+
+  .content {
+    padding: 2rem 1rem;
+  }
+
+  .formulario {
+    padding: 2rem 1rem;
+  }
 }
