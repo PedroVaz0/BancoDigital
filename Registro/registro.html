@@ -1,47 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registrar-se</title>
-    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="registro.css" />
   </head>
   <body>
     <header>
-        <img class="logo" src="img/LogoSemFundo.png" alt="">
+      <img class="logo" src="img/LogoSemFundo.png" alt="" />
       <h1>Bentz</h1>
     </header>
 
     <main>
       <section class="content">
         <h2>Complete os campos ao lado para criar sua conta</h2>
-        <img src="img/propaganda-bentz.png" alt="">
+        <img src="img/propaganda-bentz.png" alt="" />
       </section>
       <section class="formulario">
         <form action="#">
-          <label for="cpf">CPF:</label><br />
-          <input type="text" id="cpf" name="cpf" required/><br>
 
-          <label for="numero">Telefone:</label><br />
-          <input type="text" id="numero" name="numero" /><br>
+          <label for="cpf"></label><br>
+          <input type="text" id="cpf" name="cpf" placeholder="CPF"/><br>
 
-          <label for="nome">Nome completo:</label><br />
-          <input type="text" id="nome" name="nome" required/><br>
+          <label for="numero"></label><br>
+          <input type="tel" id="numero" name="numero" placeholder="Telefone"/><br>
 
-          <label for="email">Email:</label><br />
-          <input type="email" id="email" name="email" required/><br>
+          <label for="nome"></label><br>
+          <input type="text" id="nome" name="nome" placeholder="Nome Completo"/><br>
 
-          <label for="senha">Senha:</label><br />
-          <input type="text" id="senha" name="senha" required/><br><br>
+          <label for="email"></label><br>
+          <input type="email" id="email" name="email" placeholder="Email"/><br>
 
+          <label for="senha"></label><br>
+          <input type="text" id="senha" name="senha" placeholder="Senha"/><br>
 
           <div class="condERedirecionamento">
-              <input type="checkbox" id="termos"><label for="termos">Eu li, estou ciente das condições de tratamento dos meus dados pessoais e dou meu consentimento, quando aplicável, confome descrito nesta Política de privacidade</label>
-              <br>
-              <a href="">Ja tem conta?</a>
+            <input type="checkbox" id="termos" /><label for="termos"
+              >Eu li, estou ciente das condições de tratamento dos meus dados
+              pessoais e dou meu consentimento, quando aplicável, confome
+              descrito nesta Política de privacidade</label
+            >
+            <br />
+            <a href="">Ja tem conta?</a>
           </div>
 
-          <input type="submit" name="enviar" id="enviar" value="Registrar-se">
+          <input type="submit" name="enviar" id="enviar" value="Registrar-se" />
         </form>
       </section>
     </main>

@@ -58,7 +58,7 @@ main {
 }
 
 .content img {
-  width: 600px;
+  width: 800px;
   display: flex;
   
 }
@@ -79,8 +79,30 @@ main {
 #email,
 #senha {
   width: 80%;
-  height: 4vh;
+  height: 6vh;
   border-radius: 10px;
+  border-radius: 25px;
+  color: var(--cor-secundaria);
+  transition: 0.1s;
+}
+
+.formulario #cpf:hover,
+#numero:hover,
+#nome:hover,
+#email:hover,
+#senha:hover {
+  border: 3px solid;
+  border-color: #4c0082cb;
+}
+
+.formulario input {
+  font-size: 1.2em;
+  padding-left: 15px;
+  font-weight: 600;
+}
+
+.formulario input:focus {
+  outline: none;
 }
 
 .condERedirecionamento a {
