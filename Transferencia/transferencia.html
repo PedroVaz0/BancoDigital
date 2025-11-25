@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realizar Transferência</title>
+    <link rel="stylesheet" href="transferencia.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <img class="logo" src="../TelaInicial/img/LogoSemFundo.png" alt="Logo Bentz" />
+      <h1>Bentz</h1>
+    </header>
+
+    <main>
+      <form action="#" class="form-transferencia">
+        <fieldset>
+
+          <label for="destinatario">Para quem você deseja transferir?</label>
+          <input type="text" id="destinatario" name="destinatario" />
+
+          <label for="origem-pagamento">Selecione a origem do pagamento</label>
+          <select name="origem" id="origem-pagamento">
+            <option value="none">Selecione um item</option>
+            <option value="saldo">Saldo da Conta</option>
+            <option value="emprestimo">Empréstimo</option>
+          </select>
+
+          <label for="valor">Qual será o valor do pagamento?</label>
+          <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="0.00" />
+
+        </fieldset>
+
+        <input type="submit" value="Transferir" id="btn-enviar">
+      </form>
+    </main>
+
+  </body>
+</html>

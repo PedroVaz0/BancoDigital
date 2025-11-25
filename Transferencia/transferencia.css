@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap");
+
+:root {
+  --cor-primaria: #f1c232;
+  --cor-secundaria: #1e1e1e;
+  --cor-acento: #f1c232;
+  --fundo: #2b2b2b;
+  --texto: #f9f9f9;
+  --cinza: #3a3a3a;
+  --fonte-primaria: "Inter", Arial, sans-serif;
+  --fonte-secundaria: "Merriweather", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fonte-secundaria);
+  color: var(--texto);
+}
+
+body {
+  background-color: var(--fundo);
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--cor-secundaria);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+header .logo {
+  width: 60px;
+}
+
+header h1 {
+  color: var(--cor-acento);
+  font-size: 1.8em;
+}
+
+/* ===== FORMULÁRIO ===== */
+
+main {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+form fieldset {
+  border: 2px solid var(--cor-primaria);
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--cinza);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 1.1em;
+}
+
+input,
+select {
+  background: #1f1f1f;
+  border: 1px solid var(--cor-primaria);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1em;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--cor-acento);
+  box-shadow: 0 0 5px var(--cor-acento);
+}
+
+#btn-enviar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  margin-top: 20px;
+  transition: ease 0.5s;
+}
+
+#btn-enviar:hover {
+  transform: scale(1.1);
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria);
+}
