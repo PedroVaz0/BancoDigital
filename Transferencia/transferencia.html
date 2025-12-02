@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Realizar Transferência</title>
-    <link rel="stylesheet" href="transferencia.css" />
-  </head>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Realizar Transferência — Bentz</title>
+<link rel="stylesheet" href="transferencia.css" />
+</head>
+<body>
+<header class="topbar">
+<div class="brand">
+<img src="../TelaInicial/img/LogoSemFundo.png" alt="Logo Bentz" class="logo" />
+<h1>Bentz</h1>
+</div>
+<div class="account">
+<div class="saldo">Saldo: <strong>R$ 1.250,00</strong></div>
+</div>
+</header>
 
-  <body>
 
-    <header>
-      <img class="logo" src="../TelaInicial/img/LogoSemFundo.png" alt="Logo Bentz" />
-      <h1>Bentz</h1>
-    </header>
+<main>
+<section class="card">
+<h2>Realizar Transferência</h2>
+<p class="lead">Transfira via PIX, CPF/CNPJ ou conta. Valor mínimo R$ 0,01.</p>
 
-    <main>
-      <form action="#" class="form-transferencia">
-        <fieldset>
 
-          <label for="destinatario">Para quem você deseja transferir?</label>
-          <input type="text" id="destinatario" name="destinatario" />
+<form class="form-transfer" action="#" method="post">
 
-          <label for="origem-pagamento">Selecione a origem do pagamento</label>
-          <select name="origem" id="origem-pagamento">
-            <option value="none">Selecione um item</option>
-            <option value="saldo">Saldo da Conta</option>
-            <option value="emprestimo">Empréstimo</option>
-          </select>
 
-          <label for="valor">Qual será o valor do pagamento?</label>
-          <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="0.00" />
+<label for="destinatario">Chave PIX / CPF / Conta</label>
+<input id="destinatario" name="destinatario" type="text" placeholder="Ex: 11999990000 ou chave@banco" required autocomplete="off" />
 
-        </fieldset>
 
-        <input type="submit" value="Transferir" id="btn-enviar">
-      </form>
-    </main>
+<label for="nome-dest">Nome do destinatário (opcional)</label>
+<input id="nome-dest" name="nome-dest" type="text" placeholder="Nome completo" />
 
-  </body>
+
+<label for="origem">Origem do pagamento</label>
+<select id="origem" name="origem" required>
+<option value="" disabled selected hidden>Selecione</option>
+<option value="saldo">Saldo da Conta</option>
+<option value="cartao">Cartão de Débito</option>
+<option value="poupanca">Conta Poupança</option>
+<option value="emprestimo">Empréstimo</option>
+</select>
+
+
+<label for="valor">Valor (R$)</label>
+<input id="valor" name="valor" type="number" min="0.01" step="0.01" placeholder="0,00" required />
+
+
+<label for="agendamento">Agendar (opcional)</label>
+<input id="agendamento" name="agendamento" type="date" />
+
+
+<div class="actions">
+<button type="reset" class="btn btn-ghost">Cancelar</button>
+<button type="submit" class="btn btn-primary">Transferir</button>
+</div>
+
+
+</form>
+
+
+<p class="hint">Dica: confirme a chave e o nome do destinatário antes de enviar.</p>
+</section>
+</main>
+
+
+<footer class="footer">© 2025 Bentz — Todos os direitos reservados</footer>
+</body>
 </html>

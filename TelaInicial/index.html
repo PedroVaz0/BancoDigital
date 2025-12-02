@@ -1,61 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../imgGeral/favicon.png"
-      type="image/x-icon"
-    />
-    <title>Tela inicial</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tela inicial — Bentz</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <header>
-      <img class="logo" src="img/LogoSemFundo.png" alt="logo pag" />
-      <h1>Bentz</h1>
+    <!-- Cabeçalho (mesma identidade visual) -->
+    <header class="topbar" role="banner">
+      <div class="brand">
+        <img src="img/LogoSemFundo.png" alt="Logo Bentz" class="logo" />
+        <h1>Bentz</h1>
+      </div>
+
+      <div class="header-right" aria-live="polite">
+        <div class="saldo">Saldo disponível: <strong>R$ 1.250,00</strong></div>
+      </div>
     </header>
 
+    <!-- Conteúdo principal -->
     <main>
-        <section class="card propaganda">
-          <img src="img/propaganda-bentz.png" alt="propaganda" />
-        </section>
-        <section class="card atividade">
-          <h2>Atividades Recentes</h2>
-          <section class="extrato">
-            <div>
-              <p><strong>Café do Ponto</strong></p>
-              <p>-R$25,00</p>
-            </div>
-            <div>
-              <p><strong>Farmácia</strong></p>
-              <p>-R$80,00</p>
-            </div>
-            <div>
-              <p><strong>Mercado Livre</strong></p>
-              <p>-R$149,99</p>
-            </div>
-            <div>
-              <p><strong>Netflix</strong></p>
-              <p>-R$39,90</p>
-            </div>
-            <div>
-              <p><strong>Pix recebido</strong></p>
-              <p>+80,00</p>
-            </div>
-          </section>
+      <!-- Coluna esquerda: banner + atividades -->
+      <div class="col">
+        <section class="card propaganda" aria-label="Propaganda">
+          <img src="img/propaganda-bentz.png" alt="Propaganda Bentz" />
         </section>
 
-        <section class="card cartao">
-          <img src="img/frenteCartaoBentz.png" alt="cartão" />
-          <button>Gerenciar Cartões</button>
+        <section class="card atividade" aria-labelledby="atividades-title">
+          <h2 id="atividades-title">Atividades Recentes</h2>
+          <ul class="extrato" aria-live="polite">
+            <li class="item"><span class="desc">Café do Ponto</span><span class="valor">- R$ 25,00</span></li>
+            <li class="item"><span class="desc">Farmácia</span><span class="valor">- R$ 80,00</span></li>
+            <li class="item"><span class="desc">Mercado Livre</span><span class="valor">- R$ 149,99</span></li>
+            <li class="item"><span class="desc">Netflix</span><span class="valor">- R$ 39,90</span></li>
+            <li class="item"><span class="desc">PIX recebido</span><span class="valor positivo">+ R$ 80,00</span></li>
+          </ul>
+
+          <div class="extrato-footer">
+            <a href="#" class="link-mais">Ver extrato completo</a>
+          </div>
         </section>
-        <section class="card Pix">
-          <p>Realizar Pix</p>
-          <input type="text" placeholder="Digite a chave Pix" />
-          <a href="../Transferencia/transferencia.html"><button>Continuar</button></a>
+      </div>
+
+      <!-- Coluna direita: resumo, cartões, pix e atalhos -->
+      <div class="col">
+        <section class="card resumo">
+          <h2>Resumo da Conta</h2>
+          <dl class="resumo-grid">
+            <div><dt>Saldo disponível</dt><dd>R$ 1.250,00</dd></div>
+            <div><dt>Limite cartão</dt><dd>R$ 3.000,00</dd></div>
+            <div><dt>Faturas</dt><dd>1 aberta</dd></div>
+            <div><dt>Conta</dt><dd>Corrente • Agência 1234</dd></div>
+          </dl>
         </section>
+
+        <section class="card cartao" aria-label="Cartões">
+          <div class="cartao-inner">
+            <img src="img/frenteCartaoBentz.png" alt="Cartão Bentz" />
+            <button class="btn btn-secondary" type="button">Gerenciar Cartões</button>
+          </div>
+        </section>
+
+        <!-- PIX: FORMULÁRIO que envia por GET para a página de transferência -->
+        <section class="card pix" aria-labelledby="pix-title">
+          <h2 id="pix-title">Realizar PIX</h2>
+
+          <!-- enviar por GET para ../Transferencia/transferencia.html -->
+          <form action="../Transferencia/transferencia.html" method="get" class="pix-form">
+            <label for="destinatario">Chave PIX / CPF / Conta</label>
+            <input id="destinatario" name="destinatario" type="text" placeholder="Ex: 11999990000 ou chave@banco" required autocomplete="off" />
+
+            <label for="nome-dest">Nome do destinatário (opcional)</label>
+            <input id="nome-dest" name="nome-dest" type="text" placeholder="Nome completo" />
+
+            <label for="origem">Origem do pagamento</label>
+            <select id="origem" name="origem" required>
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="saldo">Saldo da Conta</option>
+              <option value="cartao">Cartão de Débito</option>
+              <option value="poupanca">Conta Poupança</option>
+              <option value="emprestimo">Empréstimo</option>
+            </select>
+
+            <label for="valor">Valor (R$)</label>
+            <input id="valor" name="valor" type="number" min="0.01" step="0.01" placeholder="0,00" required />
+
+            <div class="pix-actions">
+              <button type="reset" class="btn btn-ghost">Limpar</button>
+              <!-- botão envia os campos por GET para a página de transferência -->
+              <button type="submit" class="btn btn-primary">Ir para Transferência</button>
+            </div>
+
+            <p class="hint">Ao continuar, você será levado para a tela de confirmação de transferência.</p>
+          </form>
+        </section>
+
+        <section class="card atalhos" aria-label="Atalhos">
+          <h3>Atalhos</h3>
+          <div class="grid-atalhos">
+            <a class="tile" href="#"><span>Pagar</span></a>
+            <a class="tile" href="#"><span>Transferir</span></a>
+            <a class="tile" href="#"><span>Depósito</span></a>
+            <a class="tile" href="#"><span>Empréstimos</span></a>
+          </div>
+        </section>
+      </div>
     </main>
+
+    <footer class="footer">© 2025 Bentz — Todos os direitos reservados</footer>
   </body>
 </html>
